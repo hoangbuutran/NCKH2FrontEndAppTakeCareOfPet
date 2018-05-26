@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { ApiService } from './api.service';
 import { QuyenModel } from '../Model/Quyen.model';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Injectable()
@@ -13,6 +14,7 @@ import { QuyenModel } from '../Model/Quyen.model';
 export class QuyenService {
     constructor(
         private apiService: ApiService,
+        private toastr: ToastrService
     ) { }
     quyenListProperty: QuyenModel[];
     url: string;
@@ -51,6 +53,8 @@ export class QuyenService {
 
     QuyenList() {
         this.url = 'http://localhost:57777/api/quyen/getall';
-        this.apiService.get(this.url).subscribe(res => this.quyenListProperty = res);
+        this.apiService.get(this.url).subscribe(res => {
+            this.quyenListProperty = res.data;
+        });
     }
 }

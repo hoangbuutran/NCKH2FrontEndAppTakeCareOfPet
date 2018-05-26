@@ -9,6 +9,7 @@ import { QuyenDetailComponent } from './quyen-detail/quyen-detail.component';
 import { QuyenListComponent } from './quyen-list/quyen-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+
 @NgModule({
   imports: [
     CommonModule,

@@ -26,7 +26,6 @@ export class QuyenListComponent implements OnInit {
   }
 
   loadList() {
-    
     this.quyenService.QuyenList();
   }
 
