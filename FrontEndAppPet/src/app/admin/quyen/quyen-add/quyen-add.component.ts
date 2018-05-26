@@ -28,7 +28,6 @@ export class QuyenAddComponent implements OnInit {
   ngOnInit() {
     this.QuyenAddForm = this.fb.group({
       TenQuyen: ['', Validators.required],
-      MoTa: ['', Validators.required],
       TrangThai: ['', Validators.required],
     });
   }

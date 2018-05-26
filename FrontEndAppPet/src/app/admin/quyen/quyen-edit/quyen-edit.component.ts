@@ -33,7 +33,7 @@ export class QuyenEditComponent implements OnInit {
     this.QuyenEditForm = this.fb.group({
       IdQuyen: [''],
       TenQuyen: ['', Validators.required],
-      MoTa: ['', Validators.required],
+
       TrangThai: ['', Validators.required],
     });
     this.loadForm();
@@ -43,7 +43,6 @@ export class QuyenEditComponent implements OnInit {
     this.quyenService.view(this.id).subscribe(data => {
       this.QuyenEditForm.get('IdQuyen').patchValue(data.IdQuyen);
       this.QuyenEditForm.get('TenQuyen').patchValue(data.TenQuyen);
-      this.QuyenEditForm.get('MoTa').patchValue(data.MoTa);
       this.QuyenEditForm.get('TrangThai').patchValue(data.TrangThai);
     });
   }

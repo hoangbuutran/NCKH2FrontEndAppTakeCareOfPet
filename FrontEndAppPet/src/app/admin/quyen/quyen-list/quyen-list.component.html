@@ -43,12 +43,12 @@
                             <tr>
                                 <th style="width: 10px">Select</th>
                                 <th>Tên quyền</th>
-                                <th>Mô tả</th>
+
                                 <th>Trạng thái</th>
                                 <th>Tùy chọn</th>
                             </tr>
                         </thead>
-                        <tbody *ngFor="let item of quyenService.quyenList | paginate: { itemsPerPage: 5, currentPage: p }">
+                        <tbody *ngFor="let item of quyenService.quyenListProperty | paginate: { itemsPerPage: 5, currentPage: p }">
                             <tr>
                                 <td>
                                     <input type="checkbox" name="DeleteMulti" (change)="checkboxDelete(item.IdQuyen)">
@@ -56,9 +56,7 @@
                                 <td>
                                     {{ item.TenQuyen }}
                                 </td>
-                                <td>
-                                    {{ item.MoTa }}
-                                </td>
+
                                 <td>
                                     {{ item.TrangThai }}
                                 </td>

@@ -29,25 +29,24 @@ export class LoginComponent implements OnInit {
 
   LoginSubmitForm() {
     this.taiKhoanService.Login(this.LoginForm.value)
-      .subscribe(data => {
-        if (data != null) {
+      .subscribe(res => {
+        if (res.isSuccess) {
 
-          if (data.IdQuyen === 1) {// admin
-            this.sessionService.saveSession(data);
+          if (res.data.IdQuyen === 1) {// admin
+            this.sessionService.saveSession(res.data);
             this.router.navigate(['/admin']);
 
-          } else if (data.IdQuyen === 2) { // giao vu
-            this.sessionService.saveSession(data);
+          } else if (res.data.IdQuyen === 2) { // CSYT
+            this.sessionService.saveSession(res.data);
             this.router.navigate(['/giaovu']);
 
-          } else if (data.IdQuyen === 3) { // sinh vien
-            this.sessionService.saveSession(data);
+          } else if (res.data.IdQuyen === 3) { // Nguoi dung
+            this.sessionService.saveSession(res.data);
             this.router.navigate(['/sinhvien']);
 
           }
-
         } else { // sai tai khoan
-          this.errorMessenger = 'UserName && Pass error';
+          this.errorMessenger = res.message;
         }
       });
   }

@@ -14,7 +14,7 @@ export class QuyenService {
     constructor(
         private apiService: ApiService,
     ) { }
-    quyenList: QuyenModel[];
+    quyenListProperty: QuyenModel[];
     url: string;
 
     create(quyen: QuyenModel) {
@@ -51,6 +51,6 @@ export class QuyenService {
 
     QuyenList() {
         this.url = 'http://localhost:57777/api/quyen/getall';
-        this.apiService.get(this.url).subscribe(data => this.quyenList = data);
+        this.apiService.get(this.url).subscribe(res => this.quyenListProperty = res);
     }
 }

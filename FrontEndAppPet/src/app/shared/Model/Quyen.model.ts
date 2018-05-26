@@ -1,7 +1,6 @@
 export class QuyenModel {
     IdQuyen: number;
     TenQuyen: string;
-    MoTa: string;
     TrangThai: boolean;
     TaiKhoan: [
         {
