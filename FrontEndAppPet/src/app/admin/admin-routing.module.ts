@@ -14,6 +14,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'quyen', loadChildren: './quyen/quyen.module#QuyenModule' },
+      { path: 'giongthucung', loadChildren: './giong-thu-cung/giong-thu-cung.module#GiongThuCungModule' },
+      { path: 'chuyenmuc', loadChildren: './chuyen-muc/chuyen-muc.module#ChuyenMucModule' },
     ]
   }
 ];

@@ -17,6 +17,9 @@ import { TaiKhoanService } from './shared/Service/TaiKhoan.service';
 import { AuthGuard } from './shared/Service/Auth.guard.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GiongThuCungService } from './shared/Service/GiongThuCung.service';
+import { ChuyenMucService } from './shared/Service/ChuyenMuc.service';
+// import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    // NgxEditorModule,
     ToastrModule.forRoot()
   ],
   exports: [
@@ -42,6 +46,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SessionService,
     QuyenService,
     TaiKhoanService,
+    GiongThuCungService,
+    ChuyenMucService,
     AuthGuard,
   ],
   bootstrap: [AppComponent]

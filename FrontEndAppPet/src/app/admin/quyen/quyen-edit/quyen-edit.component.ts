@@ -33,7 +33,6 @@ export class QuyenEditComponent implements OnInit {
     this.QuyenEditForm = this.fb.group({
       IdQuyen: [''],
       TenQuyen: ['', Validators.required],
-
       TrangThai: ['', Validators.required],
     });
     this.loadForm();
